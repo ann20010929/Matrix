@@ -2,7 +2,7 @@ M = [[5, 8, 1],
      [6, 7, 3],
      [2, 5, 9]]
 
-n = 3  # pour I3
+# n = 3   # pour I3
 
 
 def In(n):
@@ -34,6 +34,8 @@ def MIn(M, In):  # combiner deux matrices à une seule pour la méth du pivot de
 
 # diag(1,...,n)
 # def Dn(n):
+
+
 
 def addition_diag(A,B):
     C=[]
