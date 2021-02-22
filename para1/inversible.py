@@ -24,5 +24,13 @@ def forward_elimination(M):
 
     return M
 
-
-#print(forward_elimination(MI3))
+#pour la beauté
+def diag_1(M): #on veut que tous les mkk soient = 1
+    M = forward_elimination(M)
+    for k in range(len(M)):
+        if M[k][k] != 1.:
+            ratio = 1 / M[k][k]
+            for i in range(k, len(M)):  # ligne
+                for j in range(len(M[0])):  # colonne
+                    M[i][j] *= ratio
+    return M
