@@ -14,20 +14,17 @@ MI3 = np.array([[5, 8, 1, 1, 0, 0],
                 [6, 7, 1, 0, 1, 0],
                 [2, 5, 9, 0, 0, 1]])
 
+def forward_elimination(M):
+    diag = len(M)  # =3 forcement car diag n'existe que pour Mn(K)
+    # print(diag)
+    for k in range(diag - 1):  # iterate k fois
+        # print(M)
+        for i in range(k + 1, len(M)):  # ligne   1 2  2
+            ratio = M[i][k] / M[k][k]
+            for j in range(len(M[0])):  # colonne
+                M[i][j] -= ratio * M[k][j]
 
-def max_index0(MI3):
-    L = []
-    for k in range(len(MI3)):
-        L.append(MI3[k][0])
-    Max = max(L)
-    indexMax = L.index(Max)
-    return Max, indexMax
-# print(max_index0(MI3))
-
-def permuter_etape1(MI3):
-    Max, indexMax = max_index0(MI3)
-    MI3[[indexMax, 0]] = MI3[[0, indexMax]]
-    print(MI3)
+    return M
 
 
-permuter_etape1(MI3)
+print(forward_elimination(MI3))
