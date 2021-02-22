@@ -1,7 +1,7 @@
 # 1 mq M est inversible <-- pivot de Gauss
 # 2 trouve M^-1 <-- pivot de Jordan
 
-# valable matrice carrée
+# valable matrice carrée <-- logique
 import numpy as np
 
 M = np.array([[5, 8, 1],
@@ -15,11 +15,9 @@ MI3 = np.array([[5, 8, 1, 1, 0, 0],
                 [2, 5, 9, 0, 0, 1]])
 
 def forward_elimination(M):
-    diag = len(M)  # =3 forcement car diag n'existe que pour Mn(K)
-    # print(diag)
-    for k in range(diag - 1):  # iterate k fois
-        # print(M)
-        for i in range(k + 1, len(M)):  # ligne   1 2  2
+    nxn = len(M)  # forcement car n*n  n'existe que pour Mn(K)
+    for k in range(diag - 1):  # itérate k fois
+        for i in range(k + 1, len(M)):  # ligne   
             ratio = M[i][k] / M[k][k]
             for j in range(len(M[0])):  # colonne
                 M[i][j] -= ratio * M[k][j]
@@ -27,4 +25,4 @@ def forward_elimination(M):
     return M
 
 
-print(forward_elimination(MI3))
+#print(forward_elimination(MI3))
