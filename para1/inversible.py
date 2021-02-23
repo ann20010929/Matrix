@@ -6,12 +6,19 @@ import numpy as np
 
 
 def forward_elimination(M):
-    nxn = len(M)  # forcement car n*n  n'existe que pour Mn(K)
-    for k in range(diag - 1):  # itérate k fois
-        for i in range(k + 1, len(M)):  # ligne   
-            ratio = M[i][k] / M[k][k]
-            for j in range(len(M[0])):  # colonne
-                M[i][j] -= ratio * M[k][j]
+    diag = len(M)
+    for k in range(diag - 1):
+        # print(M)
+        for i in range(k + 1, len(M)):  # ligne
+            if M[k][k] == 0:
+                for cord in range(1, len(M)):
+                    if M[cord][k] != 0:
+                        M[[k, cord]] = M[[cord, k]]
+                        break
+            else:
+                ratio = M[i][k] / M[k][k]
+                for j in range(len(M[0])):  # colonne
+                    M[i][j] -= ratio * M[k][j]
 
     return M
 
