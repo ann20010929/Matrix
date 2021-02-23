@@ -29,11 +29,11 @@ def diag_1(M): #on veut que tous les mkk soient = 1
   
 def Jordan(M):
     M = diag_1(M)
-    for k in range(len(M)):  # =3
+    for k in range(len(M)):  # =3 pour M3(K)
         for i in range(k, len(M)):  # ligne
             for j in range(len(M[0])):  # colonne
                 if (i < 3 and j < 3) and i!=j and M[i][j] != 0:
-                        jArr = np.array([j, j])
+                        jArr = np.full(len(MIn)-1, j)
                         iArr = np.arange(0, len(M))
                         zeroIndexArr = np.array(i)
                         new_iArr = np.setdiff1d(iArr, zeroIndexArr)
