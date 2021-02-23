@@ -45,3 +45,10 @@ def Jordan(M):
                                 M[i, :] = M[i, :] + ratioForLrow * M[j, :]
                                 break
     return M
+
+
+#si on veut avoir les i et j sous forme de (i,j)
+def mij_cord(L1, L2): #par ex : L1=new_iArr et L2=jArr
+    listOfCoordinates = list(zip(L1, L2))
+    for cord in listOfCoordinates:
+        print(cord) 
