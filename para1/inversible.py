@@ -4,16 +4,6 @@
 # valable matrice carrée <-- logique
 import numpy as np
 
-M = np.array([[5, 8, 1],
-              [6, 7, 3],
-              [2, 5, 9]])
-I3 = np.array([[1, 0, 0],
-               [0, 1, 0],
-               [0, 0, 1]])
-MI3 = np.array([[5, 8, 1, 1, 0, 0],
-                [6, 7, 1, 0, 1, 0],
-                [2, 5, 9, 0, 0, 1]])
-
 
 def forward_elimination(M):
     nxn = len(M)  # forcement car n*n  n'existe que pour Mn(K)
